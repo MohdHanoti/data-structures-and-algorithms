@@ -8,15 +8,16 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
-let arr=[5,6,7];
+
 const addOne = (arr) => {
 
   // Solution code here...
   for (let i=0 ;i<arr.length;i++){
+    let arr=[5,6,7];
     arr[i]++;
   }
   return arr;};
-console.log(addOne(arr));
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
