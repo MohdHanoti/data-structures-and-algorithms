@@ -8,7 +8,10 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
-  return string.replace('0','zero');
+  let regex = /0/g;
+  let mine =string.replace(regex, 'zero');
+  return mine;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,11 +23,11 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
+  let regex = /^\d{4}$/;
+  let newnum = regex.test(pin) ? true: false;
+  return newnum;
   // Solution code here...
-
-
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -34,6 +37,9 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
+  let regex = /^[a-zA-Z]{5,10}$/;
+  let newnum = regex.test(word) ? true: false;
+  return newnum;
   // Solution code here...
 };
 
@@ -46,6 +52,9 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
+  let regex = /[a-zA-Z][0-9]/;
+  let myw = regex.test(string) ? true: false;
+  return myw;
   // Solution code here...
 };
 
@@ -67,6 +76,10 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  let regex = /^\w+(\.\w+)?@\w+\.(net|org|com)$/;
+  let myemail =regex.test(email) ? true: false;
+  return myemail;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +105,10 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  let regex = /^((\(\d{3}\))|(\d{3}))[ -]?\d{3}[ -]?\d{4}$/;
+  let newarr= regex.test(phoneNumber) ? true: false;
+  return newarr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
