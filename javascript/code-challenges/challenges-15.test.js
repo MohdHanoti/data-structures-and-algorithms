@@ -12,7 +12,10 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-
+  let nArr= arr.filter((item)=>{
+    return /^\b(Mr.|Mrs.|Ms.|Dr.)\s\w+$/g.test(item);
+  })
+ return nArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
