@@ -76,17 +76,11 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
-  let newarr=arr.split('');
-  for(let i=0;i<=newarr.length;i++){
-    if (typeof(newarr[i])!='number'){
-      console.log(typeof(newarr[i]))
-
-      //newarr.splice(i,1);
-    }
-  }
-  return newarr;
+  let nArr = [];
+  arr.forEach(item => nArr.push(item.substring(1, 4) + item.substring(6, 9) + item.substring(10, 14)));
+  return nArr;
 };
-console.log(standardizePhoneNumbers('(123) 456-7890'));
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +93,14 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let nStr = '';
+  for (let i = 0; i < str.length; i++) {
+    if (!(i % 2 === 0)) {
+      nStr += str.substring(i, i + 1);
+    }
+  }
+
+  return nStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,6 +111,20 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  let result = '';
+  let newArr = arr.map(item => {
+    if (item.includes(':)')) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  if (newArr.includes(false)) {
+    result = false;
+  } else {
+    result = true;
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
